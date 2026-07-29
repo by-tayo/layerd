@@ -35,6 +35,15 @@ export default function RootLayout({
             <Image src="/logo.png" alt="LAY/ERD" width={120} height={40} priority />
           </Link>
           <div className="flex items-center gap-6 text-sm font-medium text-zinc-600 dark:text-zinc-400">
+            <Link href="/views" className="hover:text-black dark:hover:text-zinc-50">
+              Views
+            </Link>
+            <Link href="/analyses" className="hover:text-black dark:hover:text-zinc-50">
+              Analyses
+            </Link>
+            <Link href="/pitches" className="hover:text-black dark:hover:text-zinc-50">
+              Pitches
+            </Link>
             <Link href="/posts" className="hover:text-black dark:hover:text-zinc-50">
               Posts
             </Link>
