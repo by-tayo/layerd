@@ -1,0 +1,299 @@
+---
+title: "The Price of Time"
+description: "Part two of the finance fundamentals primer: why a dollar today beats a dollar tomorrow, how to move money across time in either direction, and the discount rate that quietly decides every project."
+date: "2026-09-01"
+topic: "Finance Fundamentals"
+tags: ["finance", "fundamentals", "time-value-of-money", "npv", "valuation"]
+draft: false
+---
+
+The [primer's starting point](/posts/risk-and-time) was one principle: most financial decisions involve risk, and their costs and benefits arrive at different times. That gives two toolkits. [Part one](/posts/the-price-of-risk) built the first — return, risk, correlation, portfolios.
+
+This is the second, and it's the one that does the actual deciding.
+
+Go back to the Super Bowl ad from the intro: $6 million to air, $1.7 million a year in extra profit for four years. On raw arithmetic it's profitable — $6.8 million of benefits against $6 million of cost. But it's worth rejecting at a 10% required return, and barely worth accepting at 5%. Nothing about the cash flows changed. Only the price we put on waiting.
+
+This post is about where that price comes from and how to apply it.
+
+## Why a dollar today is worth more
+
+The reason isn't inflation, though inflation compounds the problem. The reason is that a dollar today can be **put to work**. Hand me a dollar now and I can invest it; by next year I have more than a dollar. So a dollar delivered next year has to be worth less than one delivered today, or nobody would ever wait.
+
+The rate at which that trade happens is the interest rate, and it's doing double duty. It is:
+
+- the **return** you could have earned on the next-best alternative, and therefore
+- the **opportunity cost** of tying money up in this decision instead.
+
+That second framing is the one that matters. When you discount a future cash flow, you are not making an accounting adjustment. You are asking whether this project beats what you'd otherwise do with the money.
+
+Everything below is bookkeeping on top of that one idea.
+
+## Moving money forward: future value
+
+Invest an amount today at a rate `r` for `n` periods, and you get:
+
+```
+FV = PV × (1 + r)^n
+```
+
+The exponent is where the interesting behavior lives. You earn interest on your principal, then interest on that interest, then interest on *that* — compounding.
+
+**Worked example.** $5,000 invested at 7% for 10 years.
+
+```
+(1.07)^10   = 1.967151
+FV = $5,000 × 1.967151 = $9,835.76
+```
+
+Your $5,000 nearly doubled. Note how little of that is simple interest: 7% × 10 years × $5,000 would be $3,500 of interest, for $8,500 total. Compounding contributed the other $1,335.76 — interest earning interest, and nothing else.
+
+Over long horizons that gap stops being a footnote and becomes the entire result.
+
+## Moving money backward: present value
+
+Discounting is the same equation solved the other way. What is a future amount worth today?
+
+```
+PV = FV / (1 + r)^n
+```
+
+**Worked example.** You need $40,000 in 6 years for a down payment. You can earn 6%.
+
+```
+(1.06)^6    = 1.418519
+PV = $40,000 / 1.418519 = $28,198.42
+```
+
+So $28,198.42 set aside today, left alone at 6%, becomes exactly $40,000 in six years. Those two amounts are *the same amount of money* expressed at two points in time. That equivalence is the whole mechanism.
+
+Two things follow immediately, and they're worth stating because they explain most of what you'll observe in practice:
+
+- **The higher the rate, the lower the present value.** Money that can work harder elsewhere makes waiting more expensive.
+- **The further out the cash flow, the lower the present value** — and non-linearly, because the discount factor compounds. A dollar in year 30 at 7% is worth about 13 cents today.
+
+This is why long-dated assets — growth stocks, 30-year bonds, infrastructure projects — are so violently sensitive to interest rates. Most of their value sits far out on the timeline, where the discount factor bites hardest. When rates move, those assets move most. That's not sentiment; it's the exponent.
+
+## Solving for the other two variables
+
+The equation has four terms — `PV`, `FV`, `r`, `n`. Know any three, solve for the fourth.
+
+**For the rate:**
+
+```
+r = (FV / PV)^(1/n) − 1
+```
+
+An investment that grows from $10,000 to $18,000 over 8 years:
+
+```
+r = (1.8)^(1/8) − 1 = 0.07624 = 7.62%
+```
+
+This is the honest way to compare investments with different horizons, and it's the number to ask for whenever someone quotes you a total return without a time frame. "It returned 80%" means very different things over 8 years and over 3.
+
+**For the number of periods:**
+
+```
+n = ln(FV / PV) / ln(1 + r)
+```
+
+How long to double your money at 8%?
+
+```
+n = ln(2) / ln(1.08) = 9.01 years
+```
+
+Which is where the **Rule of 72** comes from: `72 / 8 = 9`. Dividing 72 by the percentage rate approximates the doubling time, and it's accurate enough for mental math anywhere in the range you'll actually encounter. Useful precisely because it's fast — you can sanity-check a claim in your head before you reach for a calculator.
+
+## Compounding frequency and the number that's actually comparable
+
+So far we've compounded once per period. Real instruments don't. Credit cards compound monthly, some savings accounts daily, and quoted rates rarely tell you directly.
+
+With `m` compounding periods per year:
+
+```
+FV = PV × (1 + r/m)^(m × n)
+```
+
+The quoted rate — the **APR**, also called the nominal rate — is a nominal number. It's the periodic rate times the number of periods, and it deliberately ignores compounding. The rate you actually earn or pay is the **effective annual rate**:
+
+```
+EAR = (1 + APR/m)^m − 1
+```
+
+**Worked example.** A 12% APR at different frequencies:
+
+```
+Annually:      12.0000%
+Monthly:       (1 + 0.12/12)^12  − 1 = 12.6825%
+Daily:         (1 + 0.12/365)^365 − 1 = 12.7475%
+Continuously:  e^0.12 − 1            = 12.7497%
+```
+
+Two observations. First, the same "12%" spans nearly three-quarters of a percentage point depending on frequency — which is exactly why lenders quote APR and savers should ask for EAR. Second, the gains flatten fast: going from monthly to daily buys you about six basis points, and going from daily to continuous buys you two. Continuous compounding is a mathematical ceiling, not a meaningfully different product.
+
+**The rule that matters:** you can only compare rates with the same compounding frequency. Convert everything to EAR before deciding anything.
+
+## Streams of cash flows
+
+Single amounts are the warm-up. Most real decisions involve a *series* of payments, and there are shortcuts.
+
+### Annuities
+
+An **annuity** is a fixed payment `C` at regular intervals for `n` periods, with the first payment one period from now. Rather than discounting each payment separately, use the closed forms:
+
+```
+PV of an annuity  =  C × [1 − (1 + r)^−n] / r
+
+FV of an annuity  =  C × [(1 + r)^n − 1] / r
+```
+
+**Worked example (present value).** $500 a month for 5 years, at a 6% APR compounded monthly. The periodic rate is `0.06/12 = 0.005` and `n = 60`.
+
+```
+Annuity factor = [1 − (1.005)^−60] / 0.005 = 51.725561
+PV = $500 × 51.725561 = $25,862.78
+```
+
+You will pay out $30,000 in total. It is worth $25,862.78 today. The $4,137.22 gap is the price of spreading it over five years — and it's also, precisely, the most you should be willing to pay to settle the obligation immediately.
+
+**Worked example (future value).** $6,000 a year into a retirement account for 30 years at 7%.
+
+```
+Annuity factor = [(1.07)^30 − 1] / 0.07 = 94.460786
+FV = $6,000 × 94.460786 = $566,764.72
+```
+
+You contributed $180,000. You ended with $566,764.72. Compounding produced $386,764.72 — more than twice what you put in, and all of it a function of time rather than effort.
+
+### Annuities due
+
+If payments arrive at the *beginning* of each period rather than the end — rent, insurance premiums, leases — every payment sits one period closer to the present and earns one extra period of growth. Adjust by a single factor:
+
+```
+Annuity due = Ordinary annuity × (1 + r)
+```
+
+On the retirement example: `$566,764.72 × 1.07 = $606,438.25`. Moving each deposit to the start of the year adds $39,673.53 over thirty years. Same money, same rate — timing alone.
+
+### Perpetuities
+
+A payment that continues forever, starting one period from now, collapses to something almost suspiciously simple:
+
+```
+PV of a perpetuity = C / r
+```
+
+$2,000 a year forever at 5% is worth `$2,000 / 0.05 = $40,000`. An infinite stream, a finite value — because the far-out payments discount to nearly nothing.
+
+If the payment grows at a constant rate `g` (with `g` less than `r`), and `C` is next year's payment:
+
+```
+PV of a growing perpetuity = C / (r − g)
+```
+
+A first payment of $2,000, growing at 2% a year: `$2,000 / (0.05 − 0.02) = $66,666.67`. That `r − g` denominator is one of the most consequential expressions in finance — it underpins dividend discount models and terminal values in every DCF — and it's dangerously unstable. As `g` approaches `r`, value explodes toward infinity. Small changes in a growth assumption produce enormous changes in valuation. When a model's output looks absurd, this denominator is usually the first place to look.
+
+### Uneven cash flows
+
+When payments aren't level, there's no shortcut. Discount each one and add them up:
+
+```
+PV = Σ  CF(t) / (1 + r)^t
+```
+
+Tedious, completely general, and the basis of everything in the next section.
+
+## Amortization: where the payment actually goes
+
+A loan payment is an annuity solved for `C`. Given principal `P`:
+
+```
+C = P × r / [1 − (1 + r)^−n]
+```
+
+**Worked example.** A $30,000 car loan, 5 years, 6.5% APR compounded monthly (`r = 0.0054167`, `n = 60`).
+
+```
+Monthly payment = $586.98
+Total paid      = $35,219.07
+Total interest  =  $5,219.07
+```
+
+The payment is constant. Its *composition* is not — and that's the part worth seeing:
+
+```
+Month  1:  interest $162.50   principal $424.48   balance $29,575.52
+Month  2:  interest $160.20   principal $426.78   balance $29,148.73
+Month  3:  interest $157.89   principal $429.10   balance $28,719.64
+   …
+Month 60:  interest   $3.16   principal $583.82   balance      $0.00
+```
+
+Early payments are interest-heavy because interest is charged on a large outstanding balance. As the balance falls, the interest portion shrinks and principal accelerates. Every extra dollar you put toward principal early removes that dollar from every future interest calculation — which is the entire mechanism behind why prepayment saves so much more than it appears to.
+
+Worth noticing: on a five-year car loan the total interest is modest. Run the same structure over thirty years on a mortgage and the front-loading becomes severe.
+
+## Putting it together: net present value
+
+Now the payoff. **Net present value** is the present value of everything a project brings in, minus what it costs, all measured at the same moment:
+
+```
+NPV = Σ  CF(t) / (1 + r)^t     (with the initial cost as a negative CF at t = 0)
+```
+
+The decision rule is one line: **accept if NPV is positive.** A positive NPV means the project returns more than the required return — it creates value beyond what the money could have earned elsewhere.
+
+**Worked example.** Equipment costing $120,000 that generates $38,000, $45,000, $52,000, and $40,000 over four years. Required return 9%.
+
+```
+t=0:  −$120,000                        = −$120,000.00
+t=1:   $38,000 / 1.09^1                =   $34,862.39
+t=2:   $45,000 / 1.09^2                =   $37,875.60
+t=3:   $52,000 / 1.09^3                =   $40,153.54
+t=4:   $40,000 / 1.09^4                =   $28,337.01
+                                  NPV  =   $21,228.53
+```
+
+Accept. The project is worth $21,228.53 more than the capital it consumes.
+
+Raise the required return to 14% and NPV falls to **$6,741.10** — still positive, but the margin has thinned by more than two-thirds. The project didn't change. Our alternative got better.
+
+### Internal rate of return
+
+Push that further and you find the rate at which NPV hits exactly zero. That's the **internal rate of return**:
+
+```
+NPV = 0  when  r = IRR
+```
+
+For this project, **IRR = 16.65%**. Read it as a breakeven: the project creates value as long as your required return is below 16.65%, and destroys value above it. At 9% you have a wide margin. At 14% you're close to the edge. At 17% you'd walk away.
+
+IRR is intuitive and widely quoted, and it has real failure modes — it can produce multiple answers when cash flows change sign more than once, and it misleads when comparing projects of different sizes. **When IRR and NPV disagree, follow NPV.** NPV measures value created in dollars; IRR measures a rate and is silent about scale.
+
+## Where the discount rate comes from
+
+One question has been deferred this whole time: where does `r` actually come from?
+
+Part one answered it. The required return is not a market quote you look up — it's compensation for the risk you're taking. Riskier cash flows demand higher required returns, which means heavier discounting, which means lower present values. The relevant risk of an investment determines the rate, and the rate determines the value.
+
+That's the join between the two halves:
+
+```
+Risk  →  required return  →  discount rate  →  present value  →  decision
+```
+
+Get the risk assessment wrong and every number downstream is wrong with it — confidently, precisely, and to several decimal places. This is worth sitting with, because the failure mode of financial modeling is almost never arithmetic. It's a defensible-looking discount rate applied to cash flows whose risk nobody examined closely.
+
+## What you can actually do with this
+
+Strip away the notation and there are four moves:
+
+1. **Move any amount forward or backward in time** — multiply or divide by `(1 + r)^n`.
+2. **Collapse a stream of payments into one number** — annuity and perpetuity formulas, or brute-force discounting for uneven flows.
+3. **Compare alternatives honestly** — convert to a common frequency (EAR) and a common point in time (present value).
+4. **Decide** — accept positive NPV, reject negative, and know what rate you assumed.
+
+That last clause carries the weight. Every one of these calculations is exact given its inputs and only as good as its assumptions. The math is not where decisions go wrong.
+
+Across these posts, you now have both halves of the principle we started with: a way to handle risk, and a way to handle time. Nearly everything else in finance is these two ideas applied to a specific asset class and dressed in that field's vocabulary.

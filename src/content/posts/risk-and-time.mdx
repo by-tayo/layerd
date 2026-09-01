@@ -1,0 +1,71 @@
+---
+title: "Risk and Time"
+description: "The start of the finance fundamentals primer: what finance is for, why real money decisions are hard, and the two toolkits that handle it."
+date: "2026-08-20"
+topic: "Finance Fundamentals"
+tags: ["finance", "fundamentals", "risk", "time-value-of-money", "primer"]
+draft: false
+---
+
+Every financial decision you'll ever make — the retirement account, the car loan, the job offer with equity attached, the company you might start — has the same shape. You're moving capital around. Sometimes you're the one supplying it: saving, investing, lending, buying a stake in something. Sometimes you're the one who needs it: borrowing, financing, raising money. Usually you're doing both in the same month without framing it that way.
+
+That's most of what finance is. Strip the vocabulary and it comes down to four questions: who has capital, who needs it, on what terms, and whether the trade is worth making. Individuals, companies, governments — everyone sits on one side of that or the other, constantly.
+
+Most of the time the answer is obvious and you need none of this.
+
+## When it's just arithmetic
+
+You buy a laptop for $1,200. You hand over $1,200, you get the laptop, done. The price is known, the exchange happens now, and there's nothing to evaluate. That isn't a finance problem. It's a purchase.
+
+A lot of money decisions are like this — known price, immediate exchange, no uncertainty. Arithmetic handles them.
+
+## When it isn't
+
+Now you're a marketing manager. You can spend **$6 million** to produce and air a Super Bowl ad. You think the lift in brand awareness will bring in roughly **$1.7 million** in extra profit a year for the next four years. That's the entire case: $6 million out now, $6.8 million back over four years.
+
+On raw arithmetic it's a yes — $6.8M beats $6M. But look at what actually makes this decision hard, because it's two separate things.
+
+**The money doesn't move at the same time.** You pay the full $6 million today. The $1.7 million payments arrive one, two, three, and four years out. A dollar you hold now and a dollar you receive in year four are not the same dollar — you could have put the one you hold now to work in the meantime. So you can't just total the four payments and set them against the cost. They're measured at different points in time, and until you fix that, the comparison isn't real.
+
+**You don't actually know the benefits.** "$1.7 million a year" is an estimate. The true number could be $2.4 million if the ad lands, or $700,000 if it doesn't, or nothing. The cost is certain. The payoff is a guess with a range around it.
+
+Almost every financial decision worth thinking about has one or both of these features. The mortgage, the hiring plan, the acquisition, the portfolio, the startup — all of them are costs and benefits separated by time, with uncertainty on at least one side.
+
+## One idea underneath everything
+
+Here it is, and the rest of the primer is built on it:
+
+> Most financial decisions involve **risk**, and their **costs and benefits happen at different times**.
+
+That's the reason finance is a field and not just a spreadsheet. If money moved instantly and every outcome were certain, you'd never need more than addition and subtraction. It doesn't, and they aren't, so you need a way to make these decisions on purpose instead of by feel.
+
+That "on purpose" is the whole game. Gut will tell you the Super Bowl ad sounds exciting, or that debt is scary. It won't tell you whether the ad clears a 10% required return, or which of two loans actually costs less. For that you need tools.
+
+## Two problems, two toolkits
+
+The primer splits along exactly the two halves of that principle.
+
+**Risk and return** is the toolkit for the uncertainty side. It covers how to measure risk instead of just sensing it, why holding several things together is safer than holding one, which risks the market pays you to take and which it doesn't, and how to work out the return a given level of risk should demand. That last number — the required return — is what you judge everything else against.
+
+**The time value of money** is the toolkit for the timing side. It covers how to move any amount forward or backward in time so you can compare a dollar today to a dollar in year four honestly, where the discount rate comes from, and how to collapse a whole stream of future cash flows into one number you can act on. That number, cost included, is net present value, and the decision rule is a single line: if it's positive, do it.
+
+The two connect. The output of the risk toolkit — the required return — is the input to the time toolkit — the discount rate. Get the risk wrong and every number after it is wrong with it.
+
+```
+risk  →  required return  →  discount rate  →  present value  →  decision
+```
+
+## Why this is worth your time regardless of what you do
+
+You don't have to work in finance to be making these decisions constantly. Choosing between a lease and a loan is a time-value problem. Deciding how much of your savings to leave in cash is a risk problem. Taking a lower salary for equity is both. Analyst, student, founder, none of the above — you'll be on both sides of the capital trade for the rest of your life, and the same machinery runs a retirement contribution and a fifty-million-dollar acquisition. The scale changes. The reasoning doesn't.
+
+There's a security angle too, since that's the other half of what LAY/ERD is about. A breach, a fraud loss, an account takeover — those are probabilistic future costs. The controls that prevent them are certain present costs. Deciding what protection is worth paying for is the Super Bowl ad with the sign flipped: costs and benefits separated by time, uncertainty on one side. The tools carry straight over.
+
+## What's next
+
+Two posts follow this one.
+
+- **[Part one](/posts/the-price-of-risk)** builds the risk toolkit: return, risk, correlation, and how portfolios actually behave.
+- **[Part two](/posts/the-price-of-time)** builds the time toolkit: present value, discounting, annuities, and NPV.
+
+Together they cover most of what you need to evaluate any financial decision that isn't just arithmetic. Nearly everything else in finance is these two ideas applied to a specific asset and dressed in that corner's vocabulary.

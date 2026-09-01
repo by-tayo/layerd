@@ -1,0 +1,199 @@
+---
+title: "The Price of Risk"
+description: "Part one of the finance fundamentals primer: how to measure what an investment returned, how wrong that number can be, and why the risk of a holding depends entirely on what you already own."
+date: "2026-08-25"
+topic: "Finance Fundamentals"
+tags: ["finance", "fundamentals", "risk", "return", "diversification", "portfolio"]
+draft: false
+---
+
+In [the intro](/posts/risk-and-time) we landed on one idea: most financial decisions involve risk, and their costs and benefits arrive at different times. That splits into two toolkits. This post builds the first one — return, risk, correlation, and how portfolios actually behave.
+
+The second toolkit, time, gets its own post. This one is about the uncertainty.
+
+## Return: what you actually earned
+
+Over one period, an asset pays you in two ways. The price moves, and it might hand you income along the way — a dividend, a coupon, rent. Add both and divide by what you put in:
+
+```
+R = (P_end − P_start + C) / P_start
+```
+
+where `C` is the income received during the period.
+
+**Worked example.** You buy a share at $100, it's worth $108 a year later, and it paid a $3 dividend.
+
+```
+Capital gain yield  =  ($108 − $100) / $100  =  8%
+Dividend yield      =  $3 / $100             =  3%
+Total return        =  11%
+```
+
+Splitting it that way matters more than it looks. Two stocks can both return 11%, but one did it entirely through price and the other leaned on the dividend — different risk, different tax treatment, different thing to rely on. And to get the dollar figure, you just scale: an 11% return on $8,000 invested is $880 of profit.
+
+## Expected return: what you might earn
+
+Returns you've already earned are facts. Returns you're deciding about are not — they're a distribution. If you can describe the possible outcomes and how likely each is, the **expected return** is the probability-weighted average:
+
+```
+E(R) = Σ  pₛ × Rₛ
+```
+
+**Worked example.** A stock you think has a 25% chance of a strong year (+28%), a 50% chance of an average one (+10%), and a 25% chance of a bad one (−12%):
+
+```
+E(R) = 0.25(28%) + 0.50(10%) + 0.25(−12%) = 9%
+```
+
+That 9% is not a number you'll ever actually receive. You'll get 28, or 10, or −12. The expected return is the center of gravity of the outcomes, not a prediction of any one of them.
+
+## Historical return: the estimate you usually have instead
+
+In practice you rarely have clean probabilities. What you have is a track record, and you use its average as your best guess at the expected return:
+
+```
+R̄ = (R₁ + R₂ + … + R_T) / T
+```
+
+This is a simple arithmetic average of the period returns. It's a serviceable estimate of what to expect next period — with one caveat worth carrying into the time post: the arithmetic average is *not* what your money actually compounded to over the whole stretch. A year of +50% followed by a year of −50% averages to zero and leaves you down 25%. Averages describe a single period; compounding describes a sequence.
+
+## Risk: how wrong the estimate can be
+
+Expected return tells you the center. Risk is the spread around it — and the standard measure is **variance**, the probability-weighted average of squared distances from the mean:
+
+```
+σ²  =  Σ  pₛ (Rₛ − r̂)²        (from a distribution)
+
+σ²  =  (1 / (T − 1))  Σ (Rₜ − R̄)²   (from historical data)
+```
+
+Squaring does two jobs: it makes deviations in both directions count as risk, and it punishes big misses far more than small ones. Then take the square root to get back to normal units — the **standard deviation**, also called volatility:
+
+```
+σ = √σ²
+```
+
+**Worked example.** For the stock above, with E(R) = 9%:
+
+```
+σ² = 0.25(28 − 9)² + 0.50(10 − 9)² + 0.25(−12 − 9)²
+   = 0.25(361) + 0.50(1) + 0.25(441)
+   = 201  (%²)
+
+σ  = √201 = 14.18%
+```
+
+So: expect 9%, give or take about 14 points in a typical year. That "give or take" is the entire cost of holding the thing.
+
+Standard deviation is the default risk measure because it's simple and additive in the way you'll need next. What it misses is worth knowing: it treats a 20% surprise gain as exactly as "risky" as a 20% loss, and it understates how often extreme moves actually happen. It's a good first number, not the last word.
+
+## Portfolios: return is a weighted average
+
+Almost nobody holds one asset. Once you hold several, the weight of each one is its share of the total:
+
+```
+wᵢ = (market value of asset i) / (market value of the whole portfolio)
+```
+
+And the portfolio's return — or expected return — is just the weighted average of the pieces:
+
+```
+R_p = Σ wᵢ Rᵢ            E(R_p) = Σ wᵢ E(Rᵢ)
+```
+
+Nothing surprising here. Put 70% in something expected to return 9% and 30% in something expected to return 4%, and the portfolio's expected return is `0.7(9%) + 0.3(4%) = 7.5%`. Return combines linearly.
+
+## Portfolios: risk is not a weighted average
+
+Risk is where it gets interesting, and it's the one genuinely free lunch in finance.
+
+The naive guess would be that a 70/30 mix of a 18%-volatility asset and a 7%-volatility asset has volatility `0.7(18%) + 0.3(7%) = 14.7%`. It doesn't. The actual number depends on how the two assets move *relative to each other*, measured by **correlation**:
+
+```
+Corr(A, B)  =  Cov(A, B) / (σ_A σ_B)
+```
+
+Correlation runs from +1 (they move in perfect lockstep) through 0 (no relationship) to −1 (one zigs exactly when the other zags). For a two-asset portfolio:
+
+```
+σ_p²  =  w_A² σ_A²  +  w_B² σ_B²  +  2 w_A w_B · Corr(A,B) · σ_A σ_B
+```
+
+The first two terms are each asset's own risk, scaled by weight. The third term — the cross term — is the whole story. It's the only place correlation enters, and it's what makes the portfolio's risk drift below the weighted average.
+
+**Worked example.** The 70/30 mix above (σ of 18% and 7%), at a correlation of 0.15:
+
+```
+σ_p² = 0.7²(18²) + 0.3²(7²) + 2(0.7)(0.3)(0.15)(18)(7)
+     = 158.76 + 4.41 + 7.94
+     = 171.11
+
+σ_p  = √171.11 = 13.08%
+```
+
+Same 7.5% expected return as before. But the risk came in at 13.08% instead of the 14.7% you'd get by averaging — a reduction you didn't pay for. It came entirely from the two assets not moving together.
+
+Push the correlation around and hold everything else fixed:
+
+```
+Corr = +1.0   →   σ_p = 14.70%   (no benefit — this is the weighted average)
+Corr = +0.5   →   σ_p = 13.77%
+Corr = +0.15  →   σ_p = 13.08%
+Corr =  0.0   →   σ_p = 12.77%
+Corr = −0.5   →   σ_p = 11.69%
+Corr = −1.0   →   σ_p = 10.50%
+```
+
+The lower the correlation, the more the combined risk falls below what the parts would suggest. At +1 there's no diversification at all; the portfolio is just a blend. Everywhere below +1, you're getting risk reduction for free.
+
+For three assets the formula grows a cross term for every pair:
+
+```
+σ_p² = Σ wᵢ² σᵢ²  +  Σ  2 wᵢ wⱼ · Corr(i,j) · σᵢ σⱼ   (over each pair i, j)
+```
+
+Same mechanism, more bookkeeping. As you add holdings, the pairwise cross terms come to dominate the sum — which is why, past a certain point, portfolio risk is almost entirely about how your holdings relate to each other, not how volatile any one of them is.
+
+## The risk that actually matters
+
+Here's the payoff, and it reframes the question you should be asking.
+
+A holding's standalone volatility is not the risk it brings to a portfolio you already own. What it brings is the part of its movement that lines up with everything else you hold. That's its **relevant risk**:
+
+```
+Relevant risk of asset i  =  σᵢ × Corr(i, portfolio)
+```
+
+And total portfolio risk is just the weighted sum of those contributions:
+
+```
+σ_p  =  Σ  wᵢ · σᵢ · Corr(i, portfolio)
+```
+
+Run the numbers on a single position with 30% volatility:
+
+```
+Corr with your portfolio = 0.8   →   relevant risk = 24%
+Corr with your portfolio = 0.1   →   relevant risk = 3%
+```
+
+Same 30%-volatility asset. In one portfolio it's a major risk contributor; in another it's almost noise — because in the second one, its ups and downs mostly cancel against the rest of what you hold. A wildly volatile asset that doesn't track your portfolio can *lower* your total risk.
+
+So "is this stock risky?" has no answer on its own. The question is always "risky relative to what I already hold?" And that's the hinge into the rest of finance: markets don't pay you for risk you could have diversified away by holding it alongside other things. They pay you for the relevant part — the risk that's still there after diversification. That compensation is the **required return**, and it's the number the second half of the primer runs on.
+
+## What you can actually do with this
+
+Four moves:
+
+1. **Measure what you earned** — price change plus income, over what you put in. Split it into capital gain and income yield; they're not the same kind of money.
+2. **Turn a view of the future into two numbers** — probability-weight the outcomes for the expected return `E(R)`, and take the spread around it for the risk `σ`.
+3. **Combine holdings** — portfolio expected return is the weighted average of the pieces; portfolio risk is *less* than that weighted average whenever the pieces move less than perfectly together.
+4. **Judge a new position by what it adds** — its relevant risk, `σᵢ × Corr(i, portfolio)`, not its standalone volatility.
+
+The output of all of this is a required return: the compensation the relevant risk demands. Feed that into the other toolkit and it becomes the discount rate — the price you put on waiting.
+
+```
+risk  →  required return  →  discount rate  →  present value  →  decision
+```
+
+Get the risk assessment wrong and everything downstream is wrong with it. The math is exact; the risk judgment it runs on is not.
