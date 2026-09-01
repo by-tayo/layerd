@@ -17,9 +17,11 @@ export default function PostsPage() {
               href={`/posts/${post.slug}`}
               className="flex flex-col gap-2 border-b border-zinc-200 pb-8 dark:border-zinc-800"
             >
-              <span className="text-xs font-medium uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
-                {post.topic}
-              </span>
+              {post.topic && (
+                <span className="text-xs font-medium uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
+                  {post.topic}
+                </span>
+              )}
               <h2 className="text-xl font-semibold text-black dark:text-zinc-50">
                 {post.title}
               </h2>
