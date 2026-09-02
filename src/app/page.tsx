@@ -45,9 +45,11 @@ export default function Home() {
         </h1>
         <div className="flex max-w-2xl flex-col gap-4 text-lg leading-8 text-zinc-700 dark:text-zinc-300">
           <p>
-            LAY/ERD isn&apos;t trying to turn you into an expert. It&apos;s here to
-            close the gap between the money decisions you&apos;re making every
-            day and the stuff nobody ever actually sat you down and explained.
+            The money decisions you make every day — saving, borrowing,
+            investing, which app holds your balance — mostly get made blind.
+            LAY/ERD is here to close the gap between those decisions and the
+            stuff nobody ever actually sat you down and explained. Not to make
+            you an expert; just to make the call less of a guess.
           </p>
         </div>
       </section>
@@ -55,17 +57,17 @@ export default function Home() {
       <section className="flex justify-center px-6 py-20 sm:px-10">
         <div className="flex max-w-2xl flex-col gap-4 text-lg leading-8 text-zinc-700 dark:text-zinc-300">
           <p>
-            Doesn&apos;t matter what you do — analyst, student, founder, whatever
-            — you need to get personal finance. Not as a nice-to-have. As a
-            baseline. That&apos;s what I&apos;m writing about here, one perspective at
-            a time.
+            It doesn&apos;t matter what you do — analyst, student, founder.
+            Personal finance isn&apos;t a nice-to-have, it&apos;s a baseline, and
+            most of us are left to pick it up by trial and error. I&apos;m
+            writing it down instead, one piece at a time.
           </p>
           <p>
-            And money and security kind of go hand in hand. Every account you
-            open, every app you hand your balance to, every password you
-            reuse — that&apos;s a security decision, not just a financial one.
-            LAY/ERD covers both sides: the personal finance basics, and the
-            security basics that decide whether any of it&apos;s actually safe.
+            Money and security are the same problem from two angles. Every
+            account you open, every app you trust with your balance, every
+            password you reuse is a financial decision and a security decision
+            at once. LAY/ERD covers both sides: the finance fundamentals, and
+            the security fundamentals that decide whether any of it holds up.
           </p>
         </div>
       </section>
@@ -139,21 +141,16 @@ export default function Home() {
             About
           </h2>
           <p className="text-lg leading-8 text-zinc-700 dark:text-zinc-300">
-            Tayo is a B.B.A in Cybersecurity student, a former AML Analyst,
-            and the founder of LAY/ERD. I cover where finance and security
-            overlap — the way money moves, what actually protects it, the
-            mechanics behind fraud, and what all of that means for how you
-            handle your own.
+            Tayo is a B.B.A. in Cybersecurity student and a former AML analyst,
+            working where finance and security overlap — how money moves, what
+            actually protects it, and the mechanics behind fraud.
           </p>
           <p className="text-lg leading-8 text-zinc-700 dark:text-zinc-300">
-            It comes in a few layers. Posts are the fundamentals — the stuff
-            everyone should know but nobody gets taught. Views is more
-            personal: my own take on what&apos;s happening, and conversations
-            where I hand the mic to someone else, each one saved as an
-            episode. Analyses is where I dig into how a company or market
-            actually works. Pitches is where I make the case for or against
-            holding something, reasoning included, so you can judge it
-            yourself.
+            LAY/ERD comes in layers. Posts are the fundamentals — right now, a
+            finance primer that builds from risk and time up through valuation.
+            Views is the personal layer: my read on things, and conversations
+            where I hand someone else the mic. Analyses and Pitches are where
+            the fundamentals get pointed at real companies and real positions.
           </p>
         </div>
       </section>

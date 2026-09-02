@@ -16,7 +16,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "LAY/ERD",
-  description: "A perspective on money, decisions, and the tech behind both.",
+  description:
+    "A perspective on money, decisions, and the tech behind both — personal finance and security fundamentals, from someone working at the overlap.",
 };
 
 export default function RootLayout({

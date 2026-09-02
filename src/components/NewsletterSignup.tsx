@@ -19,13 +19,13 @@ export default function NewsletterSignup() {
           Newsletter
         </h2>
         <p className="text-lg leading-8 text-zinc-700 dark:text-zinc-300">
-          New posts, straight to your inbox. No spam, just the fundamentals.
+          New posts in your inbox. No spam, no upsell — just the writing.
         </p>
       </div>
       {status === "submitted" ? (
         <p className="text-zinc-700 dark:text-zinc-300">
-          Thanks for signing up — the newsletter is still getting set up, but
-          you&apos;re on the list for when it launches.
+          You&apos;re on the list. The newsletter&apos;s still being set up, but
+          you&apos;ll get the first send when it goes out.
         </p>
       ) : (
         <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:flex-row">
