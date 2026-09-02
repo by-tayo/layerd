@@ -141,16 +141,19 @@ export default function Home() {
             About
           </h2>
           <p className="text-lg leading-8 text-zinc-700 dark:text-zinc-300">
-            Tayo is a B.B.A. in Cybersecurity student and a former AML analyst,
-            working where finance and security overlap — how money moves, what
-            actually protects it, and the mechanics behind fraud.
+            Hi, I&apos;m TAYO and I am a former AML Analyst and the founder of
+            LAY/ERD. I cover where finance and security overlap — the way money
+            moves, what actually protects it, the mechanics behind fraud, and
+            what all of that means for how you handle your own.
           </p>
           <p className="text-lg leading-8 text-zinc-700 dark:text-zinc-300">
-            LAY/ERD comes in layers. Posts are the fundamentals — right now, a
-            finance primer that builds from risk and time up through valuation.
-            Views is the personal layer: my read on things, and conversations
-            where I hand someone else the mic. Analyses and Pitches are where
-            the fundamentals get pointed at real companies and real positions.
+            It comes in a few layers. Posts are the fundamentals — the stuff
+            everyone should know but nobody gets taught. Views is more personal:
+            my own take on what&apos;s happening, and conversations where I hand
+            the mic to someone else, each one saved as an episode. Analyses is
+            where I dig into how a company or market actually works. Pitches is
+            where I make the case for or against holding something, reasoning
+            included, so you can judge it yourself.
           </p>
         </div>
       </section>
