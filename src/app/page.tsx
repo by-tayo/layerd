@@ -21,7 +21,7 @@ export default function Home() {
       label: "Analyses",
       href: "/analyses",
       description:
-        "How a company, sector, or market actually works — the mechanics, not just the headline.",
+        "How a company, sector, or market actually works. The mechanics, not just the headline.",
       count: getAllAnalyses().length,
       unit: "analysis",
       unitPlural: "analyses",
@@ -30,7 +30,7 @@ export default function Home() {
       label: "Pitches",
       href: "/pitches",
       description:
-        "The case for or against holding something — thesis, risks, and the reasoning laid out so you can judge it yourself.",
+        "The case for or against holding something: thesis, risks, and the reasoning laid out so you can judge it yourself.",
       count: getAllPitches().length,
       unit: "pitch",
       unitPlural: "pitches",
@@ -45,11 +45,11 @@ export default function Home() {
         </h1>
         <div className="flex max-w-2xl flex-col gap-4 text-lg leading-8 text-zinc-700 dark:text-zinc-300">
           <p>
-            The money decisions you make every day — saving, borrowing,
-            investing, which app holds your balance — mostly get made blind.
-            LAY/ERD is here to close the gap between those decisions and the
-            stuff nobody ever actually sat you down and explained. Not to make
-            you an expert; just to make the call less of a guess.
+            The money decisions you make every day, like saving, borrowing,
+            investing, and picking which app holds your balance, mostly get made
+            blind. LAY/ERD is here to close the gap between those decisions and
+            the stuff nobody ever actually sat you down and explained. Not to
+            make you an expert. Just to make the call less of a guess.
           </p>
         </div>
       </section>
@@ -57,10 +57,10 @@ export default function Home() {
       <section className="flex justify-center px-6 py-20 sm:px-10">
         <div className="flex max-w-2xl flex-col gap-4 text-lg leading-8 text-zinc-700 dark:text-zinc-300">
           <p>
-            It doesn&apos;t matter what you do — analyst, student, founder.
-            Personal finance isn&apos;t a nice-to-have, it&apos;s a baseline, and
-            most of us are left to pick it up by trial and error. I&apos;m
-            writing it down instead, one piece at a time.
+            It doesn&apos;t matter what you do, whether you&apos;re an analyst, a
+            student, or a founder. Personal finance isn&apos;t a nice-to-have,
+            it&apos;s a baseline, and most of us are left to pick it up by trial
+            and error. I&apos;m writing it down instead, one piece at a time.
           </p>
           <p>
             Money and security are the same problem from two angles. Every
@@ -142,12 +142,12 @@ export default function Home() {
           </h2>
           <p className="text-lg leading-8 text-zinc-700 dark:text-zinc-300">
             Hi, I&apos;m TAYO and I am a former AML Analyst and the founder of
-            LAY/ERD. I cover where finance and security overlap — the way money
+            LAY/ERD. I cover where finance and security overlap: the way money
             moves, what actually protects it, the mechanics behind fraud, and
             what all of that means for how you handle your own.
           </p>
           <p className="text-lg leading-8 text-zinc-700 dark:text-zinc-300">
-            It comes in a few layers. Posts are the fundamentals — the stuff
+            It comes in a few layers. Posts are the fundamentals, the stuff
             everyone should know but nobody gets taught. Views is more personal:
             my own take on what&apos;s happening, and conversations where I hand
             the mic to someone else, each one saved as an episode. Analyses is

@@ -19,7 +19,7 @@ export default function NewsletterSignup() {
           Newsletter
         </h2>
         <p className="text-lg leading-8 text-zinc-700 dark:text-zinc-300">
-          New posts in your inbox. No spam, no upsell — just the writing.
+          New posts, straight to your inbox.
         </p>
       </div>
       {status === "submitted" ? (
