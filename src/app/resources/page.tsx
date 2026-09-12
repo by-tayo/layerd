@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const resources = [
   {
     category: "Personal Finance",
@@ -52,6 +54,24 @@ export default function ResourcesPage() {
           <p className="text-zinc-600 dark:text-zinc-400">
             A short, curated list — tools and sources worth knowing about, not an exhaustive directory.
           </p>
+        </div>
+        <div className="flex flex-col gap-5">
+          <h2 className="text-sm font-medium uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
+            Layered Glossary
+          </h2>
+          <div className="flex flex-col gap-5">
+            <Link
+              href="/glossary"
+              className="flex flex-col gap-1 border-b border-zinc-200 pb-5 dark:border-zinc-800"
+            >
+              <span className="text-lg font-semibold text-black dark:text-zinc-50">
+                Glossary
+              </span>
+              <span className="text-zinc-600 dark:text-zinc-400">
+                165 plain-English definitions across banking, credit, investing, retirement, and estate planning — with a &ldquo;Layered Take&rdquo; on select terms drawn from real risk and AML work.
+              </span>
+            </Link>
+          </div>
         </div>
         {resources.map((group) => (
           <div key={group.category} className="flex flex-col gap-5">
