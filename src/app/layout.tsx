@@ -15,8 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "LAY/ERD",
-  description: "A perspective on money, decisions, and the tech behind both.",
+  title: "LAY/ERD — Finance, AI, and cyber, one layer at a time",
+  description:
+    "A perspective on money, decisions, and the tech behind both. Personal finance and security fundamentals, explained without the expertise tax.",
 };
 
 export default function RootLayout({
@@ -27,6 +28,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
@@ -59,12 +61,7 @@ export default function RootLayout({
             <a href="#about" className="hover:text-black dark:hover:text-zinc-50">
               About
             </a>
-            <a
-              href="https://linktr.ee/bytayo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-black dark:hover:text-zinc-50"
-            >
+            <a href="https://linktr.ee/bytayo" target="_blank" rel="noopener noreferrer" className="hover:text-black dark:hover:text-zinc-50">
               Socials
             </a>
           </div>

@@ -41,9 +41,12 @@ export default function Home() {
     <div className="flex flex-col flex-1 bg-zinc-50 font-sans dark:bg-black">
       <section className="flex flex-col items-center gap-8 border-b border-zinc-200 px-6 py-28 text-center sm:px-10 dark:border-zinc-800">
         <h1 className="max-w-2xl text-4xl font-semibold tracking-tight text-black sm:text-5xl dark:text-zinc-50">
-          A perspective on money, decisions, and the tech behind both.
+          Finance, AI, and cyber &mdash; one layer at a time.
         </h1>
         <div className="flex max-w-2xl flex-col gap-4 text-lg leading-8 text-zinc-700 dark:text-zinc-300">
+          <p className="text-xl text-zinc-800 dark:text-zinc-200">
+            A perspective on money, decisions, and the tech behind both.
+          </p>
           <p>
             LAY/ERD isn&apos;t trying to turn you into an expert. It&apos;s here to
             close the gap between the money decisions you&apos;re making every
@@ -55,15 +58,14 @@ export default function Home() {
       <section className="flex justify-center px-6 py-20 sm:px-10">
         <div className="flex max-w-2xl flex-col gap-4 text-lg leading-8 text-zinc-700 dark:text-zinc-300">
           <p>
-            Doesn&apos;t matter what you do — analyst, student, founder, whatever
-            — you need to get personal finance. Not as a nice-to-have. As a
-            baseline. That&apos;s what I&apos;m writing about here, one perspective at
-            a time.
+          It doesn’t matter what you do. 
+          Whether you’re an analyst, student, founder, or anything else, you need to learn personal finance. 
+          Not as a nice to have, but as a baseline. That’s what I’m writing about here, one perspective at a time.
           </p>
           <p>
             And money and security kind of go hand in hand. Every account you
             open, every app you hand your balance to, every password you
-            reuse — that&apos;s a security decision, not just a financial one.
+            reuse that&apos;s a security decision, not just a financial one.
             LAY/ERD covers both sides: the personal finance basics, and the
             security basics that decide whether any of it&apos;s actually safe.
           </p>
@@ -139,14 +141,14 @@ export default function Home() {
             About
           </h2>
           <p className="text-lg leading-8 text-zinc-700 dark:text-zinc-300">
-            Tayo is a B.B.A in Cybersecurity student, a former AML Analyst,
+            TAYO is a B.B.A in Cybersecurity student, a former AML analyst,
             and the founder of LAY/ERD. I cover where finance and security
-            overlap — the way money moves, what actually protects it, the
+            overlap in the how way money moves, what actually protects it, the
             mechanics behind fraud, and what all of that means for how you
             handle your own.
           </p>
           <p className="text-lg leading-8 text-zinc-700 dark:text-zinc-300">
-            It comes in a few layers. Posts are the fundamentals — the stuff
+            It comes in a few layers. Posts are the fundamentals which is the stuff
             everyone should know but nobody gets taught. Views is more
             personal: my own take on what&apos;s happening, and conversations
             where I hand the mic to someone else, each one saved as an

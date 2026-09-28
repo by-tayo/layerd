@@ -42,13 +42,13 @@ export default function ContactPage() {
             Contact
           </h1>
           <p className="text-zinc-600 dark:text-zinc-400">
-            Questions, feedback, or just want to say hi — send a message.
+            Questions or feedback? Send a message below.
           </p>
         </div>
 
         {status === "sent" ? (
           <p className="text-lg text-zinc-700 dark:text-zinc-300">
-            Thanks — your message is in. I&apos;ll get back to you soon.
+            Thanks, your message is in. I&apos;ll get back to you soon.
           </p>
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -106,7 +106,7 @@ export default function ContactPage() {
             </button>
             {status === "error" && (
               <p className="text-sm text-red-600 dark:text-red-400">
-                Something went wrong — try again in a moment.
+                Something went wrong. Try again in a moment.
               </p>
             )}
           </form>
