@@ -1,0 +1,62 @@
+---
+title: "Reading the Economy: GDP, Spending and Economic Indicators"
+description: "What GDP and consumer spending measure, how leading, coincident and lagging indicators differ, and what public data since 1990 shows about recessions."
+date: "2026-11-02"
+topic: "Finance Fundamentals"
+tags: ["economics", "GDP", "PCE", "economic indicators", "recessions"]
+draft: false
+---
+
+A quick note: I'm not a finance professional. I'm sharing what I've learned, in plain language, so it's easier for the next person. Nothing here is financial advice.
+
+Before you can make sense of markets, you need a way to tell what the economy is doing. This post covers the three ideas I found most useful: what GDP measures, why consumer spending matters so much, and how economic indicators are sorted by timing.
+
+## GDP: the economy's total output
+
+Gross domestic product (GDP) is the value of all the goods and services a country produces in a period. It has four parts:
+
+- **Consumption:** what households spend.
+- **Investment:** what businesses spend on equipment, buildings and inventory (plus new housing).
+- **Government spending:** what governments buy.
+- **Net exports:** exports minus imports.
+
+If GDP grows, the economy is producing more. If it shrinks for a sustained stretch, that is what people usually mean by a recession, though the official call in the US is made by a committee at the NBER, and it comes with a delay.
+
+## Consumer spending: the biggest piece
+
+In the US, consumer spending is roughly two-thirds of GDP. That is why economists watch households so closely. When people feel secure and spend, businesses sell more, hire more and invest more. When people pull back, it spreads quickly.
+
+The measure for this is **PCE**, personal consumption expenditures, published by the Bureau of Economic Analysis. It tracks what households spend across categories such as housing, food, health care and transportation. There is also a PCE price index, and the Federal Reserve uses it to measure inflation against its 2% goal.
+
+## Economic indicators: signposts, sorted by timing
+
+An economic indicator is a regularly published number that tells you something about the economy. The useful question is not just "what does it measure" but "when does it move compared with the economy?"
+
+| Type | What it means | Examples |
+|---|---|---|
+| Leading | Tends to move before the economy turns | Housing starts, initial jobless claims, the yield curve, the Leading Economic Index (LEI) |
+| Coincident | Moves with the economy | Job growth, industrial production, GDP |
+| Lagging | Tends to move after the economy turns | Unemployment rate, inflation measures such as CPI |
+
+![Timeline showing leading indicators turning before a recession, coincident indicators during it, and lagging indicators after it](/reading-the-economy-timeline.svg)
+
+The LEI is a published composite that combines several leading indicators into one number. Two more you will hear about: the producer price index (PPI), which tracks prices at the producer level, and business inventories, which show how much unsold stock manufacturers, wholesalers and retailers are holding. Rising inventories can be a sign that sales are slowing.
+
+**Watch out:** different sources sort indicators slightly differently, and "leading" does not mean "predicts." It means the number often turns earlier, not that it always does.
+
+## What the data actually shows
+
+I pulled ten indicators from the Federal Reserve's public FRED database, going back to 1990, and put them on a dashboard with recessions shaded. The code is open: [econ-indicators on GitHub](https://github.com/by-tayo/econ-indicators), and you can explore the [live dashboard](https://public.tableau.com/app/profile/tania.ortiz/viz/USEconomicIndicatorsDashboard/USEconomicIndicators).
+
+Four things stood out. These describe the past; they are not forecasts.
+
+1. **A negative yield spread came before the 2001 and 2008 recessions.** The 10-year minus 3-month Treasury spread went below zero about 9 months before the 2001 recession and about 17 months before the 2008 one. The gap is wide, so it says "a recession may be coming," not "when."
+2. **The pattern is not clean.** The data starts in 1990, so it cannot judge that recession. The 2020 recession was a pandemic shutdown, not something an interest-rate spread predicts. And the deepest inversion in the data, from late 2022 to the end of 2024, has not been followed by an NBER-dated recession as of the latest data.
+3. **Unemployment is a lagging indicator.** In three of the four recessions it kept rising after the recession ended, peaking about 15, 19 and 4 months later. In 2020 it peaked during the recession itself.
+4. **Four recessions is a small sample.** None of this is statistically proven.
+
+## How to use this
+
+Pick a few indicators, learn what each one measures and when it tends to move, and read them together rather than alone. One number rarely tells the story. The dashboard is a good place to practice: switch between indicators and watch how they behave around the shaded recessions.
+
+*Data: FRED (Federal Reserve Bank of St. Louis) and the NBER recession indicator, as of the 2026-10-30 pull.*

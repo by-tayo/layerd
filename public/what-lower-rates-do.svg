@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 430" width="820" height="430" role="img" aria-labelledby="t d" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">What lower interest rates tend to do</title>
+  <desc id="d">The Fed lowers its target rate. Three paths follow. Borrowing gets cheaper, so people and businesses spend and invest more. Savings and bonds pay less, so stocks look more attractive. The discount rate falls, so future cash flows are worth more today. All three can push stock values up, though this is not guaranteed.</desc>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path class="ahead" d="M0 0 L10 5 L0 10 z"/>
+    </marker>
+  </defs>
+  <style>
+    .ink { fill: #1a1a1a; }
+    .muted { fill: #5a5a5a; }
+    .box { fill: #f2f2f2; stroke: #bdbdbd; stroke-width: 1.5; }
+    .start { fill: #f2f2f2; stroke: #1f5fbf; stroke-width: 2.5; }
+    .end { fill: #f2f2f2; stroke: #b5470f; stroke-width: 2.5; }
+    .link { stroke: #5a5a5a; stroke-width: 1.8; fill: none; }
+    .ahead { fill: #5a5a5a; }
+    @media (prefers-color-scheme: dark) {
+      .ink { fill: #f0f0f0; }
+      .muted { fill: #b0b0b0; }
+      .box { fill: #262626; stroke: #5a5a5a; }
+      .start { fill: #262626; stroke: #6aa5ff; }
+      .end { fill: #262626; stroke: #ff9a5c; }
+      .link { stroke: #b0b0b0; }
+      .ahead { fill: #b0b0b0; }
+    }
+  </style>
+
+  <text class="ink" x="20" y="30" font-size="20" font-weight="700">What lower interest rates tend to do</text>
+  <text class="muted" x="20" y="50" font-size="13">Three paths, one common result</text>
+
+  <!-- start -->
+  <rect class="start" x="20" y="170" width="160" height="70" rx="8"/>
+  <text class="ink" font-size="14" font-weight="700" text-anchor="middle"><tspan x="100" y="200">The Fed lowers</tspan><tspan x="100" y="220">its target rate</tspan></text>
+
+  <!-- row 1 -->
+  <rect class="box" x="220" y="80" width="190" height="60" rx="8"/>
+  <text class="ink" font-size="13" text-anchor="middle"><tspan x="315" y="115">Borrowing gets cheaper</tspan></text>
+  <rect class="box" x="440" y="80" width="190" height="60" rx="8"/>
+  <text class="ink" font-size="13" text-anchor="middle"><tspan x="535" y="106">People and businesses</tspan><tspan x="535" y="124">spend and invest more</tspan></text>
+
+  <!-- row 2 -->
+  <rect class="box" x="220" y="175" width="190" height="60" rx="8"/>
+  <text class="ink" font-size="13" text-anchor="middle"><tspan x="315" y="210">Savings and bonds pay less</tspan></text>
+  <rect class="box" x="440" y="175" width="190" height="60" rx="8"/>
+  <text class="ink" font-size="13" text-anchor="middle"><tspan x="535" y="201">Stocks look more</tspan><tspan x="535" y="219">attractive by comparison</tspan></text>
+
+  <!-- row 3 -->
+  <rect class="box" x="220" y="270" width="190" height="60" rx="8"/>
+  <text class="ink" font-size="13" text-anchor="middle"><tspan x="315" y="305">The discount rate falls</tspan></text>
+  <rect class="box" x="440" y="270" width="190" height="60" rx="8"/>
+  <text class="ink" font-size="13" text-anchor="middle"><tspan x="535" y="296">Future cash flows are</tspan><tspan x="535" y="314">worth more today</tspan></text>
+
+  <!-- end -->
+  <rect class="end" x="665" y="170" width="135" height="70" rx="8"/>
+  <text class="ink" font-size="14" font-weight="700" text-anchor="middle"><tspan x="732" y="199">Stock values</tspan><tspan x="732" y="217">can rise</tspan></text>
+  <text class="muted" font-size="11" x="732" y="257" text-anchor="middle">not guaranteed</text>
+
+  <!-- arrows: start to each row -->
+  <path class="link" d="M180 205 H200 V110 H218" marker-end="url(#ah)"/>
+  <path class="link" d="M180 205 H218" marker-end="url(#ah)"/>
+  <path class="link" d="M180 205 H200 V300 H218" marker-end="url(#ah)"/>
+
+  <!-- arrows: within rows -->
+  <path class="link" d="M410 110 H438" marker-end="url(#ah)"/>
+  <path class="link" d="M410 205 H438" marker-end="url(#ah)"/>
+  <path class="link" d="M410 300 H438" marker-end="url(#ah)"/>
+
+  <!-- arrows: rows to end -->
+  <path class="link" d="M630 110 H648 V205 H663" marker-end="url(#ah)"/>
+  <path class="link" d="M630 205 H663" marker-end="url(#ah)"/>
+  <path class="link" d="M630 300 H648 V205 H663" marker-end="url(#ah)"/>
+
+  <text class="muted" x="20" y="372" font-size="12">Simplified. The Fed often cuts rates because the economy is weak, so stocks can still fall.</text>
+  <text class="muted" x="20" y="390" font-size="12">Effects take time and vary. Higher rates push the same chain in the opposite direction.</text>
+</svg>

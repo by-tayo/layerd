@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420" role="img" aria-labelledby="t d" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">When economic indicators turn</title>
+  <desc id="d">A timeline around one recession. Leading indicators such as housing starts and jobless claims tend to turn before it, coincident indicators such as job growth and GDP turn during it, and lagging indicators such as unemployment and CPI turn after it.</desc>
+  <style>
+    .ink { fill: #1a1a1a; }
+    .muted { fill: #5a5a5a; }
+    .band { fill: #e4e4e4; }
+    .lane { stroke: #bdbdbd; stroke-width: 2; }
+    .axis { stroke: #5a5a5a; stroke-width: 2; fill: none; }
+    .m1 { fill: #1f5fbf; }
+    .m2 { fill: #1a1a1a; }
+    .m3 { fill: #b5470f; }
+    @media (prefers-color-scheme: dark) {
+      .ink { fill: #f0f0f0; }
+      .muted { fill: #b0b0b0; }
+      .band { fill: #343434; }
+      .lane { stroke: #5a5a5a; }
+      .axis { stroke: #b0b0b0; }
+      .m1 { fill: #6aa5ff; }
+      .m2 { fill: #f0f0f0; }
+      .m3 { fill: #ff9a5c; }
+    }
+  </style>
+
+  <text class="ink" x="20" y="30" font-size="20" font-weight="700">When indicators turn</text>
+  <text class="muted" x="20" y="50" font-size="13">Where each type tends to turn, compared with one recession</text>
+
+  <!-- recession band -->
+  <rect class="band" x="400" y="70" width="160" height="265" rx="6"/>
+  <text class="ink" x="480" y="90" font-size="13" font-weight="700" text-anchor="middle">Recession</text>
+
+  <!-- lane 1: leading -->
+  <text class="ink" x="20" y="135" font-size="15" font-weight="700">Leading</text>
+  <text class="muted" x="20" y="153" font-size="12">turns before</text>
+  <line class="lane" x1="190" y1="140" x2="780" y2="140"/>
+  <circle class="m1" cx="330" cy="140" r="10"/>
+  <text class="muted" x="330" y="118" font-size="12" text-anchor="middle">turns first</text>
+  <text class="ink" x="330" y="172" font-size="12" text-anchor="middle">Housing starts, jobless claims</text>
+
+  <!-- lane 2: coincident -->
+  <text class="ink" x="20" y="225" font-size="15" font-weight="700">Coincident</text>
+  <text class="muted" x="20" y="243" font-size="12">turns with it</text>
+  <line class="lane" x1="190" y1="230" x2="780" y2="230"/>
+  <circle class="m2" cx="480" cy="230" r="10"/>
+  <text class="muted" x="480" y="208" font-size="12" text-anchor="middle">turns during</text>
+  <text class="ink" x="480" y="262" font-size="12" text-anchor="middle">Job growth, GDP</text>
+
+  <!-- lane 3: lagging -->
+  <text class="ink" x="20" y="315" font-size="15" font-weight="700">Lagging</text>
+  <text class="muted" x="20" y="333" font-size="12">turns after</text>
+  <line class="lane" x1="190" y1="320" x2="780" y2="320"/>
+  <circle class="m3" cx="660" cy="320" r="10"/>
+  <text class="muted" x="660" y="298" font-size="12" text-anchor="middle">turns last</text>
+  <text class="ink" x="660" y="352" font-size="12" text-anchor="middle">Unemployment, CPI</text>
+
+  <!-- time axis -->
+  <line class="axis" x1="190" y1="372" x2="750" y2="372"/>
+  <path class="axis" d="M742 366 L752 372 L742 378"/>
+  <text class="muted" x="758" y="376" font-size="12">time</text>
+
+  <text class="muted" x="20" y="400" font-size="12">Typical timing, not a rule. Real turns vary by months. Unemployment peaked 4 to 19 months after three of the last four recessions ended.</text>
+  <text class="muted" x="20" y="414" font-size="11">Source for the unemployment timing: FRED and NBER, 1990 to 2026.</text>
+</svg>
